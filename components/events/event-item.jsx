@@ -19,7 +19,6 @@ const EventItem = (props) => {
 
   return (
     <div className={classes.item}>
-        <img src={image} alt="" />
         <div className={classes.content}>
             <h2>{title}</h2>
             <div>

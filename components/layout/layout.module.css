@@ -1,0 +1,10 @@
+.container {
+    width: 100%;
+    height: 5rem;
+    background-color: deepskyblue;
+}
+
+.container h2 {
+    font-size: smaller;
+    font-weight: bold;
+}

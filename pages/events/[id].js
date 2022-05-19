@@ -1,21 +1,31 @@
 import React from 'react'
 import { useRouter } from 'next/router'
+import EventContent from '../../components/event-detail/event-content'
 import { getEventById } from '../../dummy-data'
 
 const Event = () => {
 
     const router = useRouter()
+    const eventId = router.query.id
 
-    const data = router.query.id
+    if(!eventId) {
+      return <p>Loading...</p>
+    }
 
-    console.log(data);
-
-    const event = getEventById(data)
+    const event = getEventById(eventId)
 
 
     if(!event) return <p>No data found!</p>
+
+
   return (
-    <div>Event</div>
+    <div>
+      <h2>Event</h2>
+      
+      <EventContent>
+        <p>{event.description}</p>
+      </EventContent>
+    </div>
   )
 }
 
